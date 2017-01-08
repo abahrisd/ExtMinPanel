@@ -1,0 +1,444 @@
+
+/**
+ * Generates a set of style rules for the "navigation" tab UI.
+ */
+@include extjs-tab-panel-ui(
+  $ui: 'navigation',
+  $ui-tab-background-color: #ffffff,
+    //$ui-tab-background-color: transparent,
+  $ui-tab-background-color-over: #505050,
+  $ui-tab-background-color-active: transparent,
+    //$ui-tab-background-color-active: #303030,
+  $ui-tab-background-gradient: 'none',
+  $ui-tab-background-gradient-over: 'none',
+  $ui-tab-background-gradient-active: 'none',
+  $ui-tab-color: #565656,
+  $ui-tab-color-over: #c4c4c4,
+  $ui-tab-color-active: #394454,
+    //$ui-tab-color-active: #fff,
+  $ui-tab-glyph-color: #fff,
+  $ui-tab-glyph-color-over: #fff,
+  $ui-tab-glyph-color-active: #fff,
+    /*$ui-tab-glyph-color: #acacac,
+    $ui-tab-glyph-color-over: #c4c4c4,
+    $ui-tab-glyph-color-active: #fff,*/
+  $ui-tab-glyph-opacity: 1,
+  $ui-tab-border-radius: 0,
+  $ui-tab-border-width: 0,
+  $ui-tab-inner-border-width: 0,
+  $ui-tab-padding: 20px 20px 10px 20px,
+  //$ui-tab-padding: 24px 24px 12px 24px,
+  $ui-tab-margin: 0,
+
+
+  //$ui-tab-inner-border-color-active:#394454,
+    /*top($tab-inner-border-color-active)
+    right($tab-inner-border-color-active),
+    left($tab-inner-border-color-active),
+    bottom(#394454),*/
+
+    /*$ui-tab-font-size: 30px,
+    $ui-tab-font-size-over: 30px,
+    $ui-tab-font-size-active: 30px,*/
+    //sencha -sdk d:\Libs\ext-6.0.0 generate -classic app MinPanel MinPanel
+
+  $ui-tab-font-size: 12px,
+  $ui-tab-font-size-over: 12px,
+  $ui-tab-font-size-active: 12px,
+
+  $ui-tab-line-height: 19px,
+  $ui-tab-font-weight: normal,
+  $ui-tab-font-weight-over: normal,
+  $ui-tab-font-weight-active: normal,
+
+  $ui-tab-icon-width: 36px,
+  $ui-tab-icon-height: 36px,
+    /*$ui-tab-icon-width: 24px,
+    $ui-tab-icon-height: 24px,*/
+
+  $ui-tab-icon-spacing: 5px,
+  $ui-bar-background-color: #ffffff, //задник хэдэра
+    //$ui-bar-background-color: #404040,
+  $ui-bar-background-gradient: 'none',
+  $ui-bar-padding: 0,
+  $ui-strip-height: 0
+);
+
+/**
+ * Generates a set of style rules for the "navigation" panel UI.
+ */
+@include extjs-panel-ui(
+  $ui: 'navigation',
+
+  $ui-body-color: #fff,
+  $ui-header-color: #000,
+  //$ui-border-width: 2px,
+  //$ui-border-color: red,
+    //$ui-header-color: #fff,
+  $ui-body-background-color: #fff,
+  $ui-header-glyph-color: #fff,
+  $ui-header-glyph-opacity: 1,
+    //$ui-header-font-size: 40px,
+  $ui-header-font-size: 16px,
+  $ui-header-line-height: 24px,
+  $ui-header-font-weight: normal, //шрифт текста лого
+    //$ui-header-font-weight: bold,
+
+  $ui-header-icon-height: 49px,
+  $ui-header-icon-width: 34px,
+    /*$ui-header-icon-height: 24px,
+    $ui-header-icon-width: 24px,*/
+
+  $ui-header-icon-spacing: 40px, //пробел между лого и текстом
+    //$ui-header-icon-spacing: 15px,
+  $ui-header-background-color: #fff,
+    //$ui-header-background-color: $base-color,
+  $ui-header-padding: 0,
+  //$ui-header-text-margin: 36px,
+  $ui-header-noborder-adjust: false
+
+);
+
+
+.x-tab-navigation {
+  // TODO: add opacity support to extjs-tab-panel-ui mixin
+  //@include opacity(0.5);
+
+  // Important added here to overcome background-color:transparent added by framing in IE8
+  // TODO: can we remove the !important rule from the framework?
+  &.x-tab-over {
+    background-color: mix(#515151, $exec-tile-background, 10%) !important;
+    //background-color: $exec-tile-background !important;
+    @include opacity(0.8);
+  }
+
+  &.x-tab-active {
+    background-color: $exec-tile-background !important;
+    //background-color: mix(#000, $exec-tile-background, 20%) !important;
+    @include opacity(1);
+  }
+
+  &.x-tab-pressed {
+    //background-color: $exec-tile-background !important;
+    background-color: mix(#515151, $exec-tile-background, 15%) !important;
+    @include opacity(1);
+  }
+}
+
+.x-tab-inner-navigation {
+  white-space: normal;
+
+  .x-ie8 & {
+    font-size: 13px;
+  }
+}
+
+.x-panel-header-title-navigation {
+  text-align: left;
+  cursor: pointer;
+  /*&:hover {
+    background-color: red !important;
+    //background-color: darken($exec-tile-background, 10%) !important;
+  }*/
+}
+/*
+.x-title .x-panel-header-title .x-panel-header-title-navigation .x-box-item .x-title-navigation .x-title-rotate-none .x-title-align-center:hover {
+  background-color: darken($exec-tile-background, 10%) !important;
+}*/
+
+.exec-header-icon, .x-tab-icon-el-navigation {
+  background-size: contain;
+}
+
+.x-title-icon-navigation {
+  font-family: FontAwesome;
+  color: #000;
+  //color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/*.x-tab-icon-el-navigation {
+  font-family: FontAwesome;
+  color: #000000;
+  //color: #acacac;
+  font-size: 40px;
+
+  .x-tab-over & {
+    color: #999;
+    //color: #c4c4c4;
+  }
+
+  .x-tab-active & {
+    color: #fff;
+    //border-bottom: 2px solid red;
+    //color: #fff;
+  }
+}*/
+
+.x-panel-header-title-navigation > .x-title-text-navigation:after {
+  top: 30px;
+  right: -24px;
+}
+
+//.x-tab-inner .x-tab-inner-navigation{white-space: normal}
+
+.m-ico-logo{
+  background-image: url(icons/logo.png);
+
+}
+.m-ico-gpro{
+  background-image: url(icons/gpro.png);
+  .x-tab-active & {
+    background-image: url(icons/gpro-active.png)
+  }
+}
+.m-ico-invest{
+  background-image: url(icons/invest.png);
+  .x-tab-active & {
+    background-image: url(icons/invest-active.png)
+  }
+}
+.m-ico-min{
+  background-image: url(icons/min.png);
+  .x-tab-active & {
+    background-image: url(icons/min-active.png)
+    /*background-image: url(icons/min.png), -moz-linear-gradient( 180deg, rgb( 65, 115, 216 ) 0%, rgb( 111, 197, 253 ) 100%) ;
+    background-image: url(icons/min.png), -webkit-linear-gradient( 180deg, rgb( 65, 115, 216 ) 0%, rgb( 111, 197, 253 ) 100%);*/
+
+  }
+}
+.m-ico-money{
+  background-image: url(icons/money.png);
+  .x-tab-active & {
+    background-image: url(icons/money-active.png)
+  }
+}
+.m-ico-region{
+  background-image: url(icons/region.png);
+  .x-tab-active & {
+    background-image: url(icons/region-active.png)
+  }
+}
+.m-ico-science{
+  background-image: url(icons/science.png);
+  .x-tab-active & {
+    background-image: url(icons/science-active.png)
+  }
+}
+.m-ico-university{
+  background-image: url(icons/university.png);
+  .x-tab-active & {
+    background-image: url(icons/university-active.png)
+  }
+}
+
+
+.exec-menu-navigation {
+
+  // MENU DISCLOSURE
+
+  .x-menu {
+    border: none;
+  }
+
+  .x-css-shadow {
+    -webkit-box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.35) !important;
+    -moz-box-shadow:    0px 0px 4px 3px rgba(0, 0, 0, 0.35) !important;
+    box-shadow:         0px 0px 4px 3px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .x-tool-img {
+    background-color: transparent !important;
+    //left: 47px;
+    //left: 44px;
+    top: 18px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    //top: 44px;
+    //top: 30px;
+  }
+
+  .x-tool-gear {
+    background-image: url(icons/menu-disclosure.png) !important;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center !important;
+    @include opacity(0.5);
+  }
+
+  &.x-ie8 .x-tool-gear {
+    background-image: url(icons/menu-disclosure-small.png) !important;
+  }
+
+  /*.x-tool {
+    background-color: $exec-tile-background;
+    //background-color: $exec-dark-background;
+  }*/
+
+  //переписываем стандартное колёсико
+  .x-tool-gear:before {
+    content: '';
+  }
+  .x-tool:hover {
+    .x-tool-gear {
+      @include opacity(1);
+    }
+    background-color: darken($exec-tile-background, 10%) !important;
+  }
+
+  // MENU
+
+  .x-menu-body {
+    background-color: $exec-tile-background;
+    //background-color: $exec-dark-background;
+    span {
+      color: $exec-font-color-main;
+      //color: white;
+      font-weight: $exec-font-semibold;
+      //@include opacity(0.5);
+    }
+    a {
+      line-height: 50px;
+    }
+  }
+
+  .x-menu-item-icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    top: 0;
+    left: 10px;
+    //@include opacity(0.5);
+    background-size: 70%;
+  }
+
+  .x-menu-item-text {
+    margin-left: 65px;
+    margin-right: 15px;
+  }
+
+  .x-menu-item-active {
+    background-color: darken($exec-light-background, 5%) !important;
+    //background-color: darken($exec-dark-background, 10%) !important;
+    span {
+      @include opacity(1);
+    }
+    .x-menu-item-icon {
+      @include opacity(1);
+    }
+  }
+}
+
+
+//--------------------------------------------------------
+// Create classes for full-size responsive items
+
+.big-100 {
+  @include responsivecolumn-item(100%);
+}
+
+.big-60 {
+  @include responsivecolumn-item(60%);
+}
+.big-66 {
+  @include responsivecolumn-item(66.66%);
+}
+
+.big-50 {
+  @include responsivecolumn-item(50%);
+}
+
+.big-55 {
+  @include responsivecolumn-item(55%);
+}
+
+.big-40 {
+  @include responsivecolumn-item(40%);
+}
+
+.big-33 {
+  @include responsivecolumn-item(33.33%);
+}
+
+.big-20 {
+  @include responsivecolumn-item(20%);
+}
+
+//--------------------------------------------------------
+// And classes for small-size responsive items
+
+.x-responsivecolumn-small {
+  > .small-100 {
+    @include responsivecolumn-item(100%);
+  }
+
+  > .small-55 {
+    @include responsivecolumn-item(55%);
+  }
+  > .small-50 {
+    @include responsivecolumn-item(50%);
+  }
+  > .small-45 {
+    @include responsivecolumn-item(45%);
+  }
+  > .small-33 {
+    @include responsivecolumn-item(33.33%);
+  }
+}
+
+//--------------------------------------------------------
+
+.x-column-header-inner, .x-column-header-text-inner, .x-column-header-inner span { white-space:normal !important; };
+
+/*
+.x-column-header-text {
+  display : block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+}*/
+/*.#{$prefix}viewport > .#{$prefix}body {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  overflow: hidden;
+  position: static;
+  // For devices that have pointer events, touch-action:none prevents the default
+  // touch action, such as pan/zoom from occurring.  This style is absolutely
+  // required in order for the Gesture publisher to work correctly on browsers that
+  // support pointer events.  Without it, a pointercancel event will fire as soon as the
+  // touch is moved, and so pointermove will never fire while dragging a finger across
+  // the screen.  This also prevents overflowing containers from scrolling using touch
+  // and so we must enable "partial" touch scrolling in IE10+ (see Ext.supports.touchScroll)
+  // See http://www.w3.org/TR/pointerevents/#the-touch-action-css-property
+  touch-action: auto;
+  // IE10 needs the -ms prefix, IE11+ does not
+  -ms-touch-action: auto;
+}
+.x-viewport, .x-viewport > .x-box-inner .x-scroll-scroller {
+  touch-action: auto;
+}
+
+
+.x-scroll-scroller {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+// Added as workaround for https://sencha.jira.com/browse/EXTJS-17314
+// This needs to be re-visited
+.x-scroll-scroller:not(.x-grid-scrollelement) {
+  height: auto !important;
+  width: auto !important;
+}*/
+.x-legend-item {
+  max-width: 24em;
+  white-space: normal;
+}
+
+.x-mask{
+  background-color: transparent;
+}

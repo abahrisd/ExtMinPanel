@@ -1,0 +1,170 @@
+
+$lightest-color: #ffffff;
+//From Dashboards
+
+// COLOR PALETTE
+
+$exec-dark-background: dynamic(#3e4752);
+$exec-light-background: dynamic(#ececec);
+$exec-tile-background: dynamic(#ffffff);
+
+$exec-blue-color: dynamic(#2e6eaf);
+$exec-red-color: dynamic(#f1495b);
+$exec-green-color: dynamic(#11c897);
+$exec-light-blue-color: dynamic(saturate(lighten($exec-blue-color, 53%), 70%));
+
+$exec-font-light-color: dynamic(#a0a7b8);
+$exec-font-color: dynamic(#000000);
+//$exec-font-color: dynamic(#878ea2);
+$exec-font-color-sign: dynamic(#9E9E9E);
+//$exec-font-color-sign: dynamic(#cdcecf);
+$exec-font-color-main: dynamic(#000000);
+//$exec-font-color-main: dynamic(#4b5259);
+$exec-font-color-hl: dynamic(#00c6ff);
+$exec-font-color-invest-hl: dynamic(#27cf9f);
+$exec-font-color-bottom-hl: dynamic(#09a8f2);
+$exec-font-color-more: dynamic(#0979c3);
+$exec-font-dark-color: dynamic($exec-dark-background);
+
+//@import url(https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,cyrillic);
+
+//Импортируем все шриытф поочереди, т.к. на импорт ругается при билде
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/C7bP6N8yXZ-PGLzbFLtQKRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/iLJc6PpCnnbQjYc1Jq4v0xJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/5pCv5Yz4eMu9gmvX8nNhfRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/gEkd0pn-sMtQ_P4HUpi6WBJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/iPF-u8L1qkTPHaKjvXERnxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/mTzVK0-EJOCaJiOPeaz-hxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/erE3KsIWUumgD1j_Ca-V-xJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+//
+$exec-font-family: dynamic("Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif);
+
+$exec-font-size-small-content: dynamic(10px);
+$exec-font-size-content: dynamic(12px);
+$exec-font-size-bottom-hl: dynamic(45px);
+$exec-font-size-big: dynamic(24px);
+$exec-font-size-small: dynamic(15px);
+$exec-font-size-content-sign: dynamic(11px);
+$exec-font-size-small-title: dynamic(14px);
+$exec-font-size-medium-title: dynamic(18px);
+$exec-font-size-large-title: dynamic(20px);
+$exec-font-size-xlarge-title: dynamic(28px);
+
+$exec-font-regular: dynamic(400);
+$exec-font-semibold: dynamic(500);
+$exec-font-bold: dynamic(800);
+
+// GENERAL APP STYLE
+
+$base-color: dynamic($exec-blue-color);
+$color: dynamic($exec-font-dark-color);
+$font-family: dynamic($exec-font-family);
+$body-background-color: dynamic($exec-light-background);
+
+// PANEL
+
+$panel-body-color: dynamic($exec-font-dark-color);
+$panel-body-background-color: dynamic($exec-tile-background);
+
+// TOOLBAR
+
+$toolbar-background-color: dynamic($exec-light-background);
+
+// GRID
+
+$grid-cell-inner-padding: dynamic(15px);
+$grid-header-padding: dynamic(15px);
+$grid-grouped-header-padding: dynamic(15px);
+
+$grid-column-header-font-weight: dynamic($exec-font-bold);
+$grid-row-cell-font-weight: dynamic($exec-font-semibold);
+
+$grid-row-cell-color: dynamic($exec-font-color);
+$grid-column-header-color: dynamic($exec-font-dark-color);
+
+$grid-grouped-header-border-width: dynamic(0);
+
+$grid-grouped-header-background-color: dynamic($exec-light-blue-color);
+
+// BUTTON
+// since only small (default) buttons are used, only small button styles are defined here
+
+$button-small-border-radius: dynamic(3px);
+$button-default-border-color:dynamic($exec-blue-color);
+
+
+$button-default-background-color: dynamic($exec-blue-color);
+$button-toolbar-background-color: dynamic($button-default-background-color);
+
+$button-default-color: dynamic(white);
+$button-toolbar-color: dynamic($button-default-color);
+
+$button-toolbar-inner-border-color-focus: dynamic(mix($button-toolbar-background-color, $button-toolbar-color, 20%));
+
+$button-small-font-size: dynamic($exec-font-size-content);
+$button-small-font-weight: dynamic($exec-font-bold);
+
+// MENU
+
+$menu-text-color: dynamic($exec-font-dark-color);
+
+// BORDERS
+
+$light-grey-borders: dynamic($exec-font-color);
