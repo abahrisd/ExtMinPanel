@@ -1,3 +1,5 @@
+Live preview - http://gazeit.ru/ExtMinPanel/
+
 # ExtMinPanel
 
 This folder is primarily a container for the top-level pieces of the application.
